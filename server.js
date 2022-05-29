@@ -15,6 +15,8 @@ mongoose.connect(dbConfig.DB_URL, ()=>{
     console.log("MongoDB Connected");
 })
 
+require('./routes/vehicle.routes')(app);
+
 //Start The server
 app.listen(serverConfig.PORT,()=>{
     console.log("Server Started on the port: "+ serverConfig.PORT);

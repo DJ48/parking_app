@@ -14,7 +14,7 @@
          required : true,
      },
      areaName : {
-         type : mongoose.SchemaTypes.ObjectId,
+         type : String,
          ref : "Area"
      },
      entryTime : {
@@ -27,17 +27,12 @@
      exitTime : {
          type : Date,
          immutable : true,
-         default : ()=>{
-             return Date.now();
-         }
      },
      duration : {
-         type : Number,
-         required : true,
+         type : Number
      },
      amountPaid : {
          type : Number,
-         required : true,
      },
  })
  

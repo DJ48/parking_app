@@ -12,8 +12,7 @@
      },
      areaName : {
          type : String,
-         required : true,
-         unique : true
+         required : true
      },
      flag : {
          type : Number,

@@ -10,5 +10,10 @@ module.exports = {
     areaStatus : {
         occupied : 0,
         unoccupied : 1,
+    },
+    vehicleType : {
+        twoWheeler : "two-wheeler",
+        hatchbackCar : "Hatchback Car",
+        suvCar : "SUV Car"
     }
 }
