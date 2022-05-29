@@ -12,8 +12,8 @@ module.exports = {
         unoccupied : 1,
     },
     vehicleType : {
-        twoWheeler : "two-wheeler",
-        hatchbackCar : "Hatchback Car",
-        suvCar : "SUV Car"
+        twoWheeler : "Two-Wheeler",
+        hatchbackCar : "Hatchback-Car",
+        suvCar : "SUV-Car"
     }
 }

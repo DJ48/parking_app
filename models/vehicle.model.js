@@ -26,7 +26,6 @@
      },
      exitTime : {
          type : Date,
-         immutable : true,
      },
      duration : {
          type : Number
