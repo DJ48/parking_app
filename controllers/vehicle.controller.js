@@ -2,11 +2,9 @@
  * Controller for vehicle parking/exit
 */
 
-const constants = require("../utils/constants");
-const Parking = require("../models/parkingLot.model");
 const Rate = require("../models/rate.model");
-const Area = require("../models/area.model");
 const Vehicle = require("../models/vehicle.model");
+const objectConverter = require("../utils/objectConverter");
 
 
 
@@ -72,6 +70,33 @@ exports.exit = async(req,res) =>{
         console.error("Error while exit: ", err.message);
         res.status(500).send({
             message : "some internal error while exit"
+        });
+    }
+}
+
+exports.fetchVehiclebyNumber = async(req,res) =>{
+    const response ={}
+
+    try{
+        
+        const vehicle = await Vehicle.find({
+            vehicleNumber : req.params.vehicleNumber
+        });
+
+        if(vehicle){
+            res.status(201).send(objectConverter.vehicleResponse(vehicle));
+        }else{
+            res.status(500).send({
+                message : "Vehicle Number doesn't exist"
+            });
+        }
+        
+        
+    }
+    catch(err){
+        console.error("Error while fetching: ", err.message);
+        res.status(500).send({
+            message : "some internal error while fetching vehicle details"
         });
     }
 }

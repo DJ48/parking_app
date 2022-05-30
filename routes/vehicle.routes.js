@@ -6,4 +6,5 @@ const freeParkingLot = require("../middlewares/freeParkingLot");
 module.exports = (app)=>{
     app.post("/parking/api/v1/vehicle-park", findParkingArea.findParkingLot ,vehicleController.park);
     app.get("/parking/api/v1/exit-park/:id",[ findVehicleType.findVehicleType, freeParkingLot.freeParkingLot ],vehicleController.exit);
+    app.get("/parking/api/v1/vehicle/:vehicleNumber", vehicleController.fetchVehiclebyNumber);
 }
