@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 /**
- * Setup the mongodb connection and create an ADMIN user
+ * Setup the mongodb connection
  */
 mongoose.connect(dbConfig.DB_URL, ()=>{
     console.log("MongoDB Connected");
